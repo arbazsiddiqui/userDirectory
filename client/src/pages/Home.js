@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { Card, Form, Input, Button, Error } from "../components/AuthForms";
+import { Card, Form, Input, Button, Error, Success } from "../components/AuthForms";
 
 function Home(props) {
+  const [submitted, setSubmitted] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [ssn, setSSN] = useState("");
@@ -12,6 +13,7 @@ function Home(props) {
     axios.post("http://localhost:8080/api/v1/user", {
       firstName, lastName, ssn, address
     }).then(result => {
+      setSubmitted(true)
     }).catch(e => {
     });
   }
@@ -53,6 +55,7 @@ function Home(props) {
         />
         <Button onClick={postUser}>Submit</Button>
       </Form>
+      { submitted &&<Success>Submitted Successfully!</Success> }
     </Card>
   );
 }

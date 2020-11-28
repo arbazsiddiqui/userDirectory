@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
-import { Card, Form, Input, Button, Error } from "../components/AuthForms";
+import {Card, Form, Input, Button, Error, Success} from "../components/AuthForms";
 
 function Signup(props) {
+  const [submitted, setSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +17,7 @@ function Signup(props) {
     }).then(result => {
       if (result.status === 200) {
         setIsError(false);
+        setSubmitted(true)
         return <Redirect to={referer} />;
       } else {
         setIsError(true);
@@ -48,6 +50,7 @@ function Signup(props) {
       </Form>
       <Link to="/login">Already have an account?</Link>
       { isError &&<Error>The username is already taken!</Error> }
+      { submitted &&<Success>Successfully Signed Up!</Success> }
     </Card>
   );
 }
