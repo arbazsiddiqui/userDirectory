@@ -1,0 +1,7 @@
+language: node_js
+script:
+  - cd server
+services:
+  - mongodb
+node_js:
+  - 12
