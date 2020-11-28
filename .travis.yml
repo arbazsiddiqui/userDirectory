@@ -1,6 +1,6 @@
 language: node_js
 script:
-  - cd server
+  - ls
 services:
   - mongodb
 node_js:
