@@ -10,9 +10,6 @@ const userSchema = mongoose.Schema({
   address: {
     type: String
   },
-  phone: {
-    type: String
-  },
   ssn: {
     type: String
   },
