@@ -1,5 +1,5 @@
 # userDirectory
-[![Build Status](https://travis-ci.org/arbazsiddiqui/log-parser.svg?branch=master)](https://travis-ci.org/arbazsiddiqui/ether-api)
+[![Build Status](https://travis-ci.com/arbazsiddiqui/userDirectory.svg?branch=master)](https://travis-ci.com/arbazsiddiqui/userDirectory)
 
 >A MERN app to add user data.
 
